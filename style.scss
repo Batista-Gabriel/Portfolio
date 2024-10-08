@@ -12,6 +12,7 @@ $light-purple: #a4a3ec;
   --title-color: #{$purple};
   --details-color: #{$light-purple};
   --btn-bg-color: #{$dark-purple};
+  --card-border-color: #{$dark-purple};
   --bg-color: #171b22;
   --font-color: #e6e6e6;
   --surface-bg-collor: #222832;
@@ -54,8 +55,93 @@ h3 {
     }
   }
 
-  .btn {
+  .btn-container {
     margin-top: 64px;
+  }
+}
+
+.project-container {
+  position: relative;
+
+  .card {
+    transition: transform 0.2s;
+  }
+
+  &::after {
+    display: inline-block;
+
+    transition: transform 0.2s;
+    position: absolute;
+    content: "";
+    // background-color: green;
+    z-index: -1;
+    bottom: 13px;
+    left: 10px;
+    width: 95%;
+    height: 82%;
+
+    border: solid var(--card-border-color);
+    border-radius: 5px;
+    border-width: 2px;
+  }
+
+  &:hover {
+    .card {
+      // transition: transform 0.2s;
+      // background-color: green;
+      transform: translate(3px, -3px);
+    }
+    &::after {
+      // transition: transform 0.2s;
+      // background-color: green;
+      transform: translate(-3px, 3px);
+    }
+  }
+}
+
+.btn-container {
+  position: relative;
+  .btn {
+    transition: transform 0.2s;
+  }
+
+  &::after {
+    display: inline-block;
+
+    padding: 6px 12px;
+    transition: transform 0.2s;
+    position: absolute;
+    content: "";
+    color: transparent;
+    // background-color: green;
+    z-index: -1;
+    bottom: -3px;
+    left: -3px;
+    width: inherit;
+    height: inherit;
+
+    border: solid var(--details-color);
+    border-radius: 5px;
+    border-width: 2px;
+  }
+
+  &:hover {
+    .btn {
+      // transition: transform 0.2s;
+      // background-color: green;
+      transform: translate(3px, -3px);
+    }
+    &::after {
+      // transition: transform 0.2s;
+      // background-color: green;
+      transform: translate(-3px, 3px);
+    }
+  }
+
+  &.contact{
+    
+    &::after{
+    content: "entrar em contato";}
   }
 }
 
@@ -132,12 +218,46 @@ h3 {
   a {
     border: solid var(--details-color);
     border-radius: 50px;
+    border-width: 2px;
     // padding: 32px 16px ;
-    height: 100px;
-    width: 60px;
+    height: 60px;
+    width: 40px;
     text-align: center;
     display: flex;
     justify-content: center;
+  }
+}
+
+.btn-custom {
+  position: relative;
+  width: 208px;
+  height: 65px;
+  .btn-inner {
+    z-index: 1;
+    position: absolute;
+    width: 208px;
+    height: 65px;
+    line-height: 55px;
+    text-align: center;
+    justify-content: center;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      display: inline-block;
+
+      // top:50%;
+      // left: 50%;
+    }
+  }
+
+  .btn-foreground {
+    position: absolute;
+  }
+  .btn-background {
+    position: absolute;
+    top: 1.5px;
+    left: 1px;
+    z-index: -1;
   }
 }
 
@@ -162,11 +282,6 @@ h3 {
     // stroke: green;
     // box-shadow: 0px 4px 4px 0px rgba(255, 0, 0, 0.224);
   }
-  .squares {
-    // stroke-width: 2px;
-    // stroke: green;
-    // fill: blue;
-  }
   .bg {
     fill: var(--btn-background-color);
     fill: var(--btn-background-color);
@@ -179,9 +294,8 @@ h3 {
   }
 }
 
-#test2{
-
-  mask-repeat: no-repeat;    
+#test2 {
+  mask-repeat: no-repeat;
 
   height: 140px;
   width: 140px;
