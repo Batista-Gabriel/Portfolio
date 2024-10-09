@@ -81,6 +81,7 @@ h3 {
 
 .btn-container {
   position: relative;
+  display: inline-block;
 }
 .btn-container .btn {
   transition: transform 0.2s;
@@ -93,8 +94,6 @@ h3 {
   content: "";
   color: transparent;
   z-index: -1;
-  bottom: -3px;
-  left: -3px;
   width: inherit;
   height: inherit;
   border: solid var(--details-color);
@@ -105,10 +104,16 @@ h3 {
   transform: translate(3px, -3px);
 }
 .btn-container:hover::after {
-  transform: translate(-3px, 3px);
+  transform: translate(-3px, 3px) !important;
 }
-.btn-container.contact::after {
+.btn-container.btn-contact::after {
   content: "entrar em contato";
+  bottom: -3px;
+  left: -3px;
+}
+.btn-container.btn-project::after {
+  content: "mais projetos";
+  transform: translate(-1.5px, 1.5px);
 }
 
 .card {
