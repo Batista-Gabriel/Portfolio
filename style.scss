@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-// $grey-1-transparency: rgb(225, 225, 255, 0.5);
 $dark-purple: #6c63ff;
 $purple: #8d8bf9;
 $light-purple: #a4a3ec;
@@ -17,6 +16,7 @@ $light-purple: #a4a3ec;
   --font-color: #e6e6e6;
   --surface-bg-collor: #222832;
 }
+
 body {
   background-color: var(--bg-color);
 
@@ -43,135 +43,13 @@ h3 {
   color: var(--title-color);
 }
 
-.home-data {
-  // position: relative;
-  height: 60vh;
-  .user-subtitle {
-    font-size: 28px;
-    margin-top: 8px;
-    margin-bottom: 32px;
-    .user-subtitle-text {
-      color: var(--details-color);
-    }
+#projetos{
+  .project-subtitle{
+    margin-bottom: 64px;
   }
-
-  .btn-container {
-    margin-top: 64px;
-  }
+.card{
+  height: 193px;
 }
-
-.project-container {
-  position: relative;
-
-  .card {
-    transition: transform 0.2s;
-  }
-
-  &::after {
-    display: inline-block;
-
-    transition: transform 0.2s;
-    position: absolute;
-    content: "";
-    // background-color: green;
-    z-index: -1;
-    bottom: 13px;
-    left: 10px;
-    width: 95%;
-    height: 82%;
-
-    border: solid var(--card-border-color);
-    border-radius: 5px;
-    border-width: 2px;
-  }
-
-  &:hover {
-    .card {
-      // transition: transform 0.2s;
-      // background-color: green;
-      transform: translate(3px, -3px);
-    }
-    &::after {
-      // transition: transform 0.2s;
-      // background-color: green;
-      transform: translate(-3px, 3px);
-    }
-  }
-}
-
-.btn-container {
-  position: relative;
-  display:inline-block;
-  .btn {
-    transition: transform 0.2s;
-  }
-
-  &::after {
-    display: inline-block;
-
-    padding: 6px 12px;
-    transition: transform 0.2s;
-    position: absolute;
-    content: "";
-    color: transparent;
-    // background-color: green;
-    z-index: -1;
-    width: inherit;
-    height: inherit;
-
-    border: solid var(--details-color);
-    border-radius: 5px;
-    border-width: 2px;
-  }
-
-  &:hover {
-    .btn {
-      // transition: transform 0.2s;
-      // background-color: green;
-      transform: translate(3px, -3px);
-    }
-    &::after {
-      // transition: transform 0.2s;
-      // background-color: green;
-      transform: translate(-3px, 3px)!important;
-    }
-  }
-
-  &.btn-contact {
-    &::after {
-      content: "entrar em contato";
-      
-    bottom: -3px;
-    left: -3px;
-    }
-  }
-  &.btn-project {
-    &::after {
-      content: "mais projetos";
-      
-      transform: translate(-1.5px, 1.5px);
-      // transform: translateX(-6px);
-      // transform: translateZ(1px);
-    }
-  }
-}
-
-.card {
-  background-color: var(--surface-bg-collor);
-  margin-bottom: 16px;
-}
-
-.btn-primary {
-  background-color: var(--btn-background-color);
-  border-color: var(--btn-background-color);
-  color: var(--font-color);
-
-  &:hover,
-  &:active {
-    background-color: var(--btn-background-color) !important;
-    border-color: var(--btn-background-color) !important;
-    color: var(--font-color) !important;
-  }
 }
 
 #profile-image {
@@ -181,7 +59,6 @@ h3 {
 
   #profile-pic {
     transform: scale(0.8);
-    // position: absolute;
 
     transform-origin: 0 0;
     -webkit-transform-origin: 0 0;
@@ -212,6 +89,124 @@ h3 {
   }
 }
 
+.home-data {
+  height: 60vh;
+  .user-subtitle {
+    font-size: 28px;
+    margin-top: 8px;
+    margin-bottom: 32px;
+    .user-subtitle-text {
+      color: var(--details-color);
+    }
+  }
+
+  .btn-container {
+    margin-top: 64px;
+  }
+}
+
+.project-container {
+  position: relative;
+
+  .card {
+    transition: transform 0.2s;
+  }
+
+  &::after {
+    display: inline-block;
+
+    transition: transform 0.2s;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    bottom: 13px;
+    left: 10px;
+    width: 95%;
+    height: 82%;
+
+    border: solid var(--card-border-color);
+    border-radius: 5px;
+    border-width: 2px;
+  }
+
+  &:hover {
+    .card {
+      transform: translate(3px, -3px);
+    }
+    &::after {
+      transform: translate(-3px, 3px);
+    }
+  }
+}
+
+.btn-primary {
+  background-color: var(--btn-background-color);
+  border-color: var(--btn-background-color);
+  color: var(--font-color);
+
+  &:hover,
+  &:active {
+    background-color: var(--btn-background-color) !important;
+    border-color: var(--btn-background-color) !important;
+    color: var(--font-color) !important;
+  }
+}
+
+.btn-container {
+  position: relative;
+  display: inline-block;
+  .btn {
+    transition: transform 0.2s;
+  }
+
+  &::after {
+    display: inline-block;
+
+    padding: 6px 12px;
+    transition: transform 0.2s;
+    position: absolute;
+    content: "";
+    color: transparent;
+    z-index: -1;
+    width: inherit;
+    height: inherit;
+
+    border: solid var(--details-color);
+    border-radius: 5px;
+    border-width: 2px;
+  }
+
+  &:hover {
+    .btn {
+      transform: translate(3px, -3px);
+    }
+    &::after {
+      transform: translate(-3px, 3px) !important;
+    }
+  }
+
+  &.btn-contact {
+    &::after {
+      content: "entrar em contato";
+
+      bottom: -3px;
+      left: -3px;
+    }
+  }
+  &.btn-project {
+    &::after {
+      content: "mais projetos";
+
+      transform: translate(-1.5px, 1.5px);
+    }
+  }
+}
+
+.card {
+  background-color: var(--surface-bg-collor);
+  margin-bottom: 16px;
+}
+
 .code-tag {
   color: var(--code-tag-color);
 }
@@ -223,14 +218,12 @@ h3 {
 
 .scroll {
   svg {
-    // margin: 32px 16px ;
     margin: auto;
   }
   a {
     border: solid var(--details-color);
     border-radius: 50px;
     border-width: 2px;
-    // padding: 32px 16px ;
     height: 60px;
     width: 40px;
     text-align: center;
@@ -255,9 +248,6 @@ h3 {
       display: inline-block;
       vertical-align: middle;
       display: inline-block;
-
-      // top:50%;
-      // left: 50%;
     }
   }
 
