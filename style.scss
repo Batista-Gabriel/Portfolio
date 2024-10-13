@@ -74,8 +74,8 @@ h4 {
 
       transform-origin: bottom right;
       position: absolute;
-      right: 2px;
-      bottom: 2px;
+      right: 4px;
+      bottom: 4px;
 
       // filter: url(#inset-shadow);
       &.student-svg {
@@ -94,9 +94,10 @@ h4 {
           stroke: var(--details-color);
         }
       }
+
       &.article-svg-group {
         .article-outline {
-          fill: var(--reverse-font-color);
+          fill: var(--details-color);
         }
         .article-background {
           fill: var(--surface-transparent-bg-color);
@@ -124,7 +125,7 @@ h4 {
 
         .magic-sponge {
           // z-index:2;
-          transition: transform 0.2s !important;
+          transition: transform 0.5s !important;
           transform: translateY(1em);
           g * {
             fill: $dark-purple;
@@ -132,6 +133,18 @@ h4 {
         }
 
         fill: green;
+      }
+
+      &.joystick {
+        .joystick-base *,
+        .joystick-stick {
+          fill: var(--surface-transparent-bg-color);
+        }
+        .joystick-top,
+        .joystick-base-top,
+        .joystick-lights * {
+          fill: var(--details-color);
+        }
       }
     }
 
@@ -162,7 +175,7 @@ h4 {
       svg {
         &.student-svg {
           .student-svg-head {
-            animation: student_head 1.3s linear infinite;
+            animation: swing_effect 1.3s linear infinite;
             transform-origin: bottom;
           }
           .student-svg-string {
@@ -172,17 +185,35 @@ h4 {
         }
 
         &.article-svg-group {
-          filter: drop-shadow(5 2px 3.8px rgba(0, 0, 0, 0.25));
           .article-svg-2 {
-            animation: spinner 1.2s ease-in-out infinite;
+            animation: spinner 1s ease-in-out infinite;
             transform-origin: left;
           }
         }
+
         &.cleaning-magic {
           .magic-sponge {
             transform: translateY(0em);
-            
-            // animation: magic_sponge 2s ease-in-out infinite;
+          }
+        }
+
+        &.joystick {
+          .joystick-move {
+            animation: swing_effect 1s linear infinite;
+            transform-origin: bottom;
+          }
+
+          .joystick-light-1 {
+            animation: blink_effect 0.5s linear infinite;
+            transform-origin: bottom;
+          }
+          .joystick-light-2 {
+            animation: blink_effect 0.55s linear infinite;
+            transform-origin: bottom;
+          }
+          .joystick-light-3 {
+            animation: blink_effect 0.6s linear infinite;
+            transform-origin: bottom;
           }
         }
       }
@@ -271,14 +302,19 @@ h4 {
   display: inline-block;
   // width: max-content;
   .btn {
-    transition: transform 0.2s, border 0.2s, background-color 0.2s;
+    transition:
+      transform 0.2s,
+      border 0.2s,
+      background-color 0.2s;
   }
 
   &::after {
     display: inline-block;
 
     padding: 6px 12px;
-    transition: transform 0.2s, border 0.2s !important;
+    transition:
+      transform 0.2s,
+      border 0.2s !important;
     position: absolute;
     content: "";
     color: transparent;
@@ -419,8 +455,9 @@ h4 {
 
 //student secction
 
-@keyframes student_head {
-  0% {
+@keyframes swing_effect {
+  0%,
+  100% {
     transform: rotateZ(0deg);
   }
 
@@ -430,6 +467,23 @@ h4 {
 
   75% {
     transform: rotateZ(-4.5deg);
+  }
+}
+
+@keyframes blink_effect {
+  0% {
+    filter: opacity(100%);
+  }
+
+  25% {
+    filter: opacity(75%);
+  }
+
+  75% {
+    filter: opacity(50%);
+  }
+  100% {
+    filter: opacity(25%);
   }
 }
 
@@ -461,23 +515,4 @@ h4 {
     -ms-transform: rotateY(-88deg);
     transform: rotateY(-88deg);
   }
-}
-
-//magic hat
-@keyframes magic_sponge {
-  0% {
-    transform: translate(-10%);
-  }
-
-  50% {
-    transform: translate(10%);
-  }
-
-  100% {
-    transform: translate(-10%);
-  }
-
-  // 75% {
-  //   transform: translate(-1%);
-  // }
 }

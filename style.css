@@ -68,8 +68,8 @@ h4 {
   transform: scale(3);
   transform-origin: bottom right;
   position: absolute;
-  right: 2px;
-  bottom: 2px;
+  right: 4px;
+  bottom: 4px;
 }
 #projetos .project-container svg.student-svg * {
   fill: var(--surface-transparent-bg-color);
@@ -84,7 +84,7 @@ h4 {
   stroke: var(--details-color);
 }
 #projetos .project-container svg.article-svg-group .article-outline {
-  fill: var(--reverse-font-color);
+  fill: var(--details-color);
 }
 #projetos .project-container svg.article-svg-group .article-background {
   fill: var(--surface-transparent-bg-color);
@@ -108,11 +108,20 @@ h4 {
   stroke: var(--details-color);
 }
 #projetos .project-container svg.cleaning-magic .magic-sponge {
-  transition: transform 0.2s !important;
+  transition: transform 0.5s !important;
   transform: translateY(1em);
 }
 #projetos .project-container svg.cleaning-magic .magic-sponge g * {
   fill: #6c63ff;
+}
+#projetos .project-container svg.joystick .joystick-base *,
+#projetos .project-container svg.joystick .joystick-stick {
+  fill: var(--surface-transparent-bg-color);
+}
+#projetos .project-container svg.joystick .joystick-top,
+#projetos .project-container svg.joystick .joystick-base-top,
+#projetos .project-container svg.joystick .joystick-lights * {
+  fill: var(--details-color);
 }
 #projetos .project-container::after {
   display: inline-block;
@@ -135,22 +144,35 @@ h4 {
   transform: translate(-3px, 3px);
 }
 #projetos .project-container:hover svg.student-svg .student-svg-head {
-  animation: student_head 1.3s linear infinite;
+  animation: swing_effect 1.3s linear infinite;
   transform-origin: bottom;
 }
 #projetos .project-container:hover svg.student-svg .student-svg-string {
   animation: student_string 1.3s linear infinite;
   transform-origin: top;
 }
-#projetos .project-container:hover svg.article-svg-group {
-  filter: drop-shadow(5 2px 3.8px rgba(0, 0, 0, 0.25));
-}
 #projetos .project-container:hover svg.article-svg-group .article-svg-2 {
-  animation: spinner 1.2s ease-in-out infinite;
+  animation: spinner 1s ease-in-out infinite;
   transform-origin: left;
 }
 #projetos .project-container:hover svg.cleaning-magic .magic-sponge {
   transform: translateY(0em);
+}
+#projetos .project-container:hover svg.joystick .joystick-move {
+  animation: swing_effect 1s linear infinite;
+  transform-origin: bottom;
+}
+#projetos .project-container:hover svg.joystick .joystick-light-1 {
+  animation: blink_effect 0.5s linear infinite;
+  transform-origin: bottom;
+}
+#projetos .project-container:hover svg.joystick .joystick-light-2 {
+  animation: blink_effect 0.55s linear infinite;
+  transform-origin: bottom;
+}
+#projetos .project-container:hover svg.joystick .joystick-light-3 {
+  animation: blink_effect 0.6s linear infinite;
+  transform-origin: bottom;
 }
 #projetos .project-text {
   z-index: 2;
@@ -335,8 +357,8 @@ h4 {
     transform: translateY(0.5em);
   }
 }
-@keyframes student_head {
-  0% {
+@keyframes swing_effect {
+  0%, 100% {
     transform: rotateZ(0deg);
   }
   25% {
@@ -344,6 +366,20 @@ h4 {
   }
   75% {
     transform: rotateZ(-4.5deg);
+  }
+}
+@keyframes blink_effect {
+  0% {
+    filter: opacity(100%);
+  }
+  25% {
+    filter: opacity(75%);
+  }
+  75% {
+    filter: opacity(50%);
+  }
+  100% {
+    filter: opacity(25%);
   }
 }
 @keyframes student_string {
@@ -363,16 +399,5 @@ h4 {
   }
   to {
     transform: rotateY(-88deg);
-  }
-}
-@keyframes magic_sponge {
-  0% {
-    transform: translate(-10%);
-  }
-  50% {
-    transform: translate(10%);
-  }
-  100% {
-    transform: translate(-10%);
   }
 }/*# sourceMappingURL=style.css.map */
