@@ -210,6 +210,15 @@ h4 {
   -moz-transform-origin: 0 0;
 }
 
+#sobre {
+  padding-top: 64px;
+}
+#sobre .sticky {
+  height: -moz-max-content;
+  height: max-content;
+  top: 50px;
+  position: sticky;
+}
 #sobre .about-itens p {
   margin-top: 16px;
   margin-bottom: 64px;

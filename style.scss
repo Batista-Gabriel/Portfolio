@@ -260,6 +260,14 @@ h4 {
 }
 
 #sobre {
+  padding-top: 64px;
+  .sticky{
+    
+  height: max-content;
+    top:50px;
+    position: sticky;
+    // background-color: green;
+  }
   .about-itens {
     p {
       margin-top: 16px;
