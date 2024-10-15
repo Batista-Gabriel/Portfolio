@@ -18,7 +18,21 @@ $light-purple: #a4a3ec;
   --surface-bg-color: #222832;
   --surface-transparent-bg-color: #302d68;
 }
-
+/*
+:root {
+  --btn-background-color: #{$light-purple};
+  --code-tag-color: #{$dark-purple};
+  --title-color: #{$dark-purple};
+  --details-color: #{$dark-purple};
+  --btn-bg-color: #{$light-purple};
+  --card-border-color: #{$light-purple};
+  --bg-color: #f2f2f2 ;
+  --font-color: black;
+  --reverse-font-color: #e6e6e6;
+  --surface-bg-color: #e6e6e6;
+  --surface-transparent-bg-color: #302d68;
+}
+*/
 body {
   background-color: var(--bg-color);
 
@@ -38,6 +52,7 @@ h3,
 h4 {
   font-family: "Bebas Neue", sans-serif;
   line-height: 0.8;
+  color: var(--title-color);
 }
 
 h1 {
@@ -45,11 +60,6 @@ h1 {
   margin: 0;
 }
 
-h2,
-h3,
-h4 {
-  color: var(--title-color);
-}
 
 h4 {
   font-size: 16px;
@@ -270,7 +280,7 @@ h4 {
   }
   .about-itens {
     p {
-      margin-top: 16px;
+      margin-top: 32px;
       margin-bottom: 64px;
     }
   }
@@ -296,6 +306,7 @@ h4 {
   background-color: var(--btn-background-color);
   border-color: var(--btn-background-color);
   color: var(--font-color);
+  font-weight: 500;
 
   &:hover,
   &:active {
@@ -396,6 +407,10 @@ h4 {
     &.play {
       animation: floating_arrow 1s ease-in-out infinite alternate;
       transform-origin: inherit;
+      path{
+        
+      fill: var(--title-color);
+      }
     }
   }
   a {

@@ -14,6 +14,21 @@
   --surface-transparent-bg-color: #302d68;
 }
 
+/*
+:root {
+  --btn-background-color: #a4a3ec;
+  --code-tag-color: #6c63ff;
+  --title-color: #6c63ff;
+  --details-color: #6c63ff;
+  --btn-bg-color: #a4a3ec;
+  --card-border-color: #a4a3ec;
+  --bg-color: #f2f2f2 ;
+  --font-color: black;
+  --reverse-font-color: #e6e6e6;
+  --surface-bg-color: #e6e6e6;
+  --surface-transparent-bg-color: #302d68;
+}
+*/
 body {
   background-color: var(--bg-color);
 }
@@ -36,17 +51,12 @@ h3,
 h4 {
   font-family: "Bebas Neue", sans-serif;
   line-height: 0.8;
+  color: var(--title-color);
 }
 
 h1 {
   font-size: 64px;
   margin: 0;
-}
-
-h2,
-h3,
-h4 {
-  color: var(--title-color);
 }
 
 h4 {
@@ -220,7 +230,7 @@ h4 {
   position: sticky;
 }
 #sobre .about-itens p {
-  margin-top: 16px;
+  margin-top: 32px;
   margin-bottom: 64px;
 }
 
@@ -243,6 +253,7 @@ h4 {
   background-color: var(--btn-background-color);
   border-color: var(--btn-background-color);
   color: var(--font-color);
+  font-weight: 500;
 }
 .btn-primary:hover, .btn-primary:active {
   background-color: var(--btn-background-color) !important;
@@ -317,6 +328,9 @@ h4 {
 .scroll svg.play {
   animation: floating_arrow 1s ease-in-out infinite alternate;
   transform-origin: inherit;
+}
+.scroll svg.play path {
+  fill: var(--title-color);
 }
 .scroll a {
   border: solid var(--details-color);
