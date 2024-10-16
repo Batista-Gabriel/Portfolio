@@ -12,6 +12,8 @@
   --reverse-font-color: black;
   --surface-bg-color: #222832;
   --surface-transparent-bg-color: #302d68;
+  --nav-bg-color: #222832;
+  --nav-background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28141, 139,249, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /*
@@ -22,13 +24,14 @@
   --details-color: #6c63ff;
   --btn-bg-color: #a4a3ec;
   --card-border-color: #a4a3ec;
-  --bg-color: #f2f2f2 ;
+  --bg-color: #f2f2f2;
   --font-color: black;
   --reverse-font-color: #e6e6e6;
   --surface-bg-color: #e6e6e6;
-  --surface-transparent-bg-color: #302d68;
-}
-*/
+  --surface-transparent-bg-color: #a4a3ec;
+  --nav-bg-color: #e6e6e6;
+  --nav-background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28108, 99, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}*/
 body {
   background-color: var(--bg-color);
 }
@@ -61,6 +64,60 @@ h1 {
 
 h4 {
   font-size: 16px;
+}
+
+nav,
+.nav {
+  background: var(--nav-bg-color);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+nav .navbar-brand,
+.nav .navbar-brand {
+  width: 20px;
+}
+nav .navbar-brand img,
+.nav .navbar-brand img {
+  width: 90px;
+}
+nav .collapse .navbar-nav .nav-item,
+.nav .collapse .navbar-nav .nav-item {
+  color: var(--details-color);
+  font-weight: bold;
+  transition: opacity 0.4s;
+}
+nav .collapse .navbar-nav .nav-item:hover:not(.active),
+.nav .collapse .navbar-nav .nav-item:hover:not(.active) {
+  border-bottom: 1px solid !important;
+}
+nav .collapse .navbar-nav .nav-item.active,
+.nav .collapse .navbar-nav .nav-item.active {
+  color: var(--font-color);
+  opacity: 1;
+  -webkit-text-decoration: solid underline var(--details-color) !important;
+          text-decoration: solid underline var(--details-color) !important;
+}
+nav .navbar-toggler,
+.nav .navbar-toggler {
+  transition: border 0.5s;
+}
+nav .navbar-toggler .navbar-toggler-icon,
+.nav .navbar-toggler .navbar-toggler-icon {
+  background-image: var(--nav-background);
+}
+nav .navbar-toggler:hover, nav .navbar-toggler:active,
+.nav .navbar-toggler:hover,
+.nav .navbar-toggler:active {
+  box-shadow: none;
+  border-color: var(--details-color);
+}
+
+nav:last-child {
+  padding: 8px 16px;
+}
+
+#inicio {
+  padding-top: 90px;
 }
 
 #projetos .project-subtitle {
@@ -220,13 +277,10 @@ h4 {
   -moz-transform-origin: 0 0;
 }
 
-#sobre {
-  padding-top: 64px;
-}
 #sobre .sticky {
   height: -moz-max-content;
   height: max-content;
-  top: 50px;
+  top: 90px;
   position: sticky;
 }
 #sobre .about-itens p {
@@ -318,8 +372,7 @@ h4 {
 
 .full-page {
   min-height: 100vh;
-  padding-top: 64px;
-  scroll-padding: 900px;
+  padding-top: 90px;
 }
 
 .scroll svg {
@@ -332,7 +385,7 @@ h4 {
 .scroll svg.play path {
   fill: var(--title-color);
 }
-.scroll a {
+.scroll div {
   border: solid var(--details-color);
   border-radius: 50px;
   border-width: 2px;
