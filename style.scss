@@ -7,6 +7,7 @@ $light-purple: #a4a3ec;
 
 :root {
   --btn-background-color: #{$dark-purple};
+  --btn-font-color: white;
   --code-tag-color: #{$purple};
   --title-color: #{$purple};
   --details-color: #{$light-purple};
@@ -22,7 +23,8 @@ $light-purple: #a4a3ec;
 }
 /*
 :root {
-  --btn-background-color: #{$light-purple};
+  --btn-background-color: #{$dark-purple};
+  --btn-font-color: white;
   --code-tag-color: #{$dark-purple};
   --title-color: #{$dark-purple};
   --details-color: #{$dark-purple};
@@ -99,18 +101,17 @@ nav,
     }
   }
   .navbar-toggler {
-    
-transition: border 0.5s;
+    transition: border 0.5s;
     .navbar-toggler-icon {
       // background-color: rgba(0, 128, 0, 0.8);
       // background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath stroke='rgba(0, 128, 0, 0.8)'stroke-width='2' stroke-linecap='round' stroke-miterlimit='10'd='M4 8h24M4 16h24M4 24h24' /%3E%3C/svg%3E");
       background-image: var(--nav-background);
     }
 
-    &:hover, &:active{
-box-shadow: none;
-border-color: var(--details-color);
-
+    &:hover,
+    &:active {
+      box-shadow: none;
+      border-color: var(--details-color);
     }
   }
 }
@@ -132,7 +133,7 @@ nav:last-child {
     position: relative;
 
     .card {
-      height: 140px;
+      height: 160px;
       position: relative;
       transition: transform 0.2s;
     }
@@ -362,14 +363,14 @@ nav:last-child {
 .btn-primary {
   background-color: var(--btn-background-color);
   border-color: var(--btn-background-color);
-  color: var(--font-color);
+  color: var(--btn-font-color);
   font-weight: 500;
 
   &:hover,
   &:active {
     background-color: var(--btn-background-color) !important;
     border-color: var(--btn-background-color) !important;
-    color: var(--font-color) !important;
+    // color: var(--font-color) !important;
   }
 }
 
@@ -378,19 +379,14 @@ nav:last-child {
   display: inline-block;
   // width: max-content;
   .btn {
-    transition:
-      transform 0.2s,
-      border 0.2s,
-      background-color 0.2s;
+    transition: transform 0.2s, border 0.2s, background-color 0.2s;
   }
 
   &::after {
     display: inline-block;
 
     padding: 6px 12px;
-    transition:
-      transform 0.2s,
-      border 0.2s !important;
+    transition: transform 0.2s, border 0.2s !important;
     position: absolute;
     content: "";
     color: transparent;
@@ -437,7 +433,7 @@ nav:last-child {
   }
   &.btn-project {
     &::after {
-      content: "mais projetos";
+      content: "Mostrar mais";
     }
   }
 }
@@ -593,5 +589,24 @@ nav:last-child {
     -moz-transform: rotateY(-88deg);
     -ms-transform: rotateY(-88deg);
     transform: rotateY(-88deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    // background-color: blue;
+  }
+  #inicio {
+  }
+  #profile-image {
+    display: none;
+    all: unset;
+    visibility: hidden;
+    height: 0;
+    padding: 0 !important;
+  }
+
+  .sticky {
+    position: relative !important;
   }
 }

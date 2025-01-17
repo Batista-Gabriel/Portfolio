@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 :root {
   --btn-background-color: #6c63ff;
+  --btn-font-color: white;
   --code-tag-color: #8d8bf9;
   --title-color: #8d8bf9;
   --details-color: #a4a3ec;
@@ -18,7 +19,8 @@
 
 /*
 :root {
-  --btn-background-color: #a4a3ec;
+  --btn-background-color: #6c63ff;
+  --btn-font-color: white;
   --code-tag-color: #6c63ff;
   --title-color: #6c63ff;
   --details-color: #6c63ff;
@@ -127,7 +129,7 @@ nav:last-child {
   position: relative;
 }
 #projetos .project-container .card {
-  height: 140px;
+  height: 160px;
   position: relative;
   transition: transform 0.2s;
 }
@@ -306,13 +308,12 @@ nav:last-child {
 .btn-primary {
   background-color: var(--btn-background-color);
   border-color: var(--btn-background-color);
-  color: var(--font-color);
+  color: var(--btn-font-color);
   font-weight: 500;
 }
 .btn-primary:hover, .btn-primary:active {
   background-color: var(--btn-background-color) !important;
   border-color: var(--btn-background-color) !important;
-  color: var(--font-color) !important;
 }
 
 .btn-container {
@@ -358,7 +359,7 @@ nav:last-child {
   content: "entrar em contato";
 }
 .btn-container.btn-project::after {
-  content: "mais projetos";
+  content: "Mostrar mais";
 }
 
 .card {
@@ -475,5 +476,17 @@ nav:last-child {
   }
   to {
     transform: rotateY(-88deg);
+  }
+}
+@media only screen and (max-width: 768px) {
+  #profile-image {
+    display: none;
+    all: unset;
+    visibility: hidden;
+    height: 0;
+    padding: 0 !important;
+  }
+  .sticky {
+    position: relative !important;
   }
 }/*# sourceMappingURL=style.css.map */
