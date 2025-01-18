@@ -136,6 +136,18 @@ nav:last-child {
       height: 160px;
       position: relative;
       transition: transform 0.2s;
+
+      .project-footer {
+        position: absolute;
+        bottom: 8px;
+      }
+
+      .techs {
+        font-size: 12px;
+        span {
+          color: var(--details-color);
+        }
+      }
     }
 
     svg {
@@ -143,8 +155,8 @@ nav:last-child {
 
       transform-origin: bottom right;
       position: absolute;
-      right: 4px;
-      bottom: 4px;
+      right: 12px;
+      bottom: 0px;
 
       // filter: url(#inset-shadow);
       &.student-svg {
@@ -215,6 +227,18 @@ nav:last-child {
           fill: var(--details-color);
         }
       }
+
+      &.robot {
+        .robot-head path{
+        background-color: blue;
+          fill: var(--surface-transparent-bg-color)!important;
+        }
+        .robot-eye path{
+          
+          transition: fill 0.2s !important;
+          fill: var(--surface-transparent-bg-color)!important;
+        }
+      }
     }
 
     &::after {
@@ -283,6 +307,13 @@ nav:last-child {
           .joystick-light-3 {
             animation: blink_effect 0.6s linear infinite;
             transform-origin: bottom;
+          }
+        }
+
+        &.robot {
+          .robot-eye path{
+            
+            fill: var(--font-color)!important;
           }
         }
       }

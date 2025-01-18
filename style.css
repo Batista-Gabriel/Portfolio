@@ -133,12 +133,22 @@ nav:last-child {
   position: relative;
   transition: transform 0.2s;
 }
+#projetos .project-container .card .project-footer {
+  position: absolute;
+  bottom: 8px;
+}
+#projetos .project-container .card .techs {
+  font-size: 12px;
+}
+#projetos .project-container .card .techs span {
+  color: var(--details-color);
+}
 #projetos .project-container svg {
   transform: scale(3);
   transform-origin: bottom right;
   position: absolute;
-  right: 4px;
-  bottom: 4px;
+  right: 12px;
+  bottom: 0px;
 }
 #projetos .project-container svg.student-svg * {
   fill: var(--surface-transparent-bg-color);
@@ -192,6 +202,14 @@ nav:last-child {
 #projetos .project-container svg.joystick .joystick-lights * {
   fill: var(--details-color);
 }
+#projetos .project-container svg.robot .robot-head path {
+  background-color: blue;
+  fill: var(--surface-transparent-bg-color) !important;
+}
+#projetos .project-container svg.robot .robot-eye path {
+  transition: fill 0.2s !important;
+  fill: var(--surface-transparent-bg-color) !important;
+}
 #projetos .project-container::after {
   display: inline-block;
   transition: transform 0.2s !important;
@@ -242,6 +260,9 @@ nav:last-child {
 #projetos .project-container:hover svg.joystick .joystick-light-3 {
   animation: blink_effect 0.6s linear infinite;
   transform-origin: bottom;
+}
+#projetos .project-container:hover svg.robot .robot-eye path {
+  fill: var(--font-color) !important;
 }
 #projetos .project-text {
   z-index: 2;
