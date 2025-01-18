@@ -3,36 +3,36 @@ var app = new Vue({
   data: {
     projects: [
       {
-        name: "Agendamento de provas",
-        description: "Para fazendo assim com que ao invés de preencher 14 campos de formulário, o usuário só preencha 4",
-        techs: ["Node.js", "Vuejs", "Vuejs", " HTML", "CSS"],
+        name: "Agendamento de Provas",
+        description: "Página Web para gerar avaliações no sistema Prova Fácil da forma mais rápida e simples possível.",
+        techs: ["Js", "Node.js", "Vuejs", " HTML", "CSS"],
       },
       {
-        name: "Gerador de Certificados",
-        description: "descrição dos ",
-        techs: ["Node.js", "Vuejs", " HTML", "CSS"],
+        name: "Gerador de Documentos",
+        description: "Plataforma web para criar certificados em massa e salvar no Google Drive. ",
+        techs: ["Js", "Node.js", "Vuejs", " HTML", "CSS"],
       },
       {
-        name: "Relatório de Vídeos",
-        description: "descrição dos ",
+        name: "Vídeo tracker",
+        description: "Programa para buscar os vídeos de uma determinada pasta e salvar o nome, o tempo de cada e o total de horas em uma planilha.",
         techs: ["Python"],
       },
-      
+
       {
-        name: "API FVC",
-        description: "descrição dos ",
-        techs: ["Node.js", "Vuejs", "Vuejs", " HTML", "CSS"],
-      },
-      {
-        name: "Games FVC",
-        description: "descrição dos ",
-        techs: ["Vuejs", " HTML", "CSS"],
-        link: "http://trivia.faculdadevitoriaemcristo.edu.br",
+        name: "Carregamento de Aulas na Plataforma",
+        description: "Automação que busca as aulas no Google Drive, salva na plataforma de vídeos e insere nas salas de aula dentro do ambiente virtual de aprendizagem.",
+        techs: ["Js", "Node.js", "Puppeteer"],
       },
     ],
+    showProjects: false
   },
   delimiters: ["${", "}"], // Avoid Twig conflicts
   methods: {
-    async generateSchedules() {},
-  },
+    async toggleProjects() {
+      this.showProjects= !this.showProjects
+console.log(this.showProjects)
+    },
+  }, mounted() {
+  }
 });
+
