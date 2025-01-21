@@ -21,7 +21,7 @@ $light-purple: #a4a3ec;
   --nav-bg-color: #222832;
   --nav-background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28141, 139,249, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-/*
+/**/
 :root {
   --btn-background-color: #{$dark-purple};
   --btn-font-color: white;
@@ -37,7 +37,7 @@ $light-purple: #a4a3ec;
   --surface-transparent-bg-color: #{$light-purple};
   --nav-bg-color: #e6e6e6;
   --nav-background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28108, 99, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}*/
+}
 
 body {
   background-color: var(--bg-color);
@@ -131,6 +131,7 @@ nav:last-child {
 
   .project-container {
     position: relative;
+    margin-bottom: 16px;
 
     .card {
       height: 160px;
@@ -143,7 +144,7 @@ nav:last-child {
       }
 
       .techs {
-        font-size: 12px;
+        font-size: 14px;
         span {
           color: var(--details-color);
         }
@@ -229,14 +230,13 @@ nav:last-child {
       }
 
       &.robot {
-        .robot-head path{
-        background-color: blue;
-          fill: var(--surface-transparent-bg-color)!important;
+        .robot-head path {
+          background-color: blue;
+          fill: var(--surface-transparent-bg-color) !important;
         }
-        .robot-eye path{
-          
+        .robot-eye path {
           transition: fill 0.2s !important;
-          fill: var(--surface-transparent-bg-color)!important;
+          fill: var(--surface-transparent-bg-color) !important;
         }
       }
     }
@@ -311,9 +311,8 @@ nav:last-child {
         }
 
         &.robot {
-          .robot-eye path{
-            
-            fill: var(--font-color)!important;
+          .robot-eye path {
+            fill: var(--details-color) !important;
           }
         }
       }
@@ -410,14 +409,19 @@ nav:last-child {
   display: inline-block;
   // width: max-content;
   .btn {
-    transition: transform 0.2s, border 0.2s, background-color 0.2s;
+    transition:
+      transform 0.2s,
+      border 0.2s,
+      background-color 0.2s;
   }
 
   &::after {
     display: inline-block;
 
     padding: 6px 12px;
-    transition: transform 0.2s, border 0.2s !important;
+    transition:
+      transform 0.2s,
+      border 0.2s !important;
     position: absolute;
     content: "";
     color: transparent;

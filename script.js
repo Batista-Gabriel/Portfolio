@@ -28,13 +28,12 @@ var app = new Vue({
         techs: ["Nodejs", "Puppeteer"],
       },
     ],
-    showProjects: true,
+    showProjects: false,
   },
   delimiters: ["${", "}"], // Avoid Twig conflicts
   methods: {
     async toggleProjects() {
       this.showProjects = !this.showProjects;
-      console.log(this.showProjects);
     },
   },
   mounted() {},

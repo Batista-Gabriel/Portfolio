@@ -17,7 +17,7 @@
   --nav-background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28141, 139,249, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/*
+/**/
 :root {
   --btn-background-color: #6c63ff;
   --btn-font-color: white;
@@ -33,7 +33,8 @@
   --surface-transparent-bg-color: #a4a3ec;
   --nav-bg-color: #e6e6e6;
   --nav-background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28108, 99, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}*/
+}
+
 body {
   background-color: var(--bg-color);
 }
@@ -127,6 +128,7 @@ nav:last-child {
 }
 #projetos .project-container {
   position: relative;
+  margin-bottom: 16px;
 }
 #projetos .project-container .card {
   height: 160px;
@@ -138,7 +140,7 @@ nav:last-child {
   bottom: 8px;
 }
 #projetos .project-container .card .techs {
-  font-size: 12px;
+  font-size: 14px;
 }
 #projetos .project-container .card .techs span {
   color: var(--details-color);
@@ -262,7 +264,7 @@ nav:last-child {
   transform-origin: bottom;
 }
 #projetos .project-container:hover svg.robot .robot-eye path {
-  fill: var(--font-color) !important;
+  fill: var(--details-color) !important;
 }
 #projetos .project-text {
   z-index: 2;
