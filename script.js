@@ -6,7 +6,7 @@ var app = new Vue({
         name: "Agendamento de Provas",
         description:
           "Página Web para gerar avaliações no sistema Prova Fácil da forma mais rápida e simples possível.",
-        techs: ["Nodejs","ExpressJs", "HTML",  "JS", "CSS"],
+        techs: ["Nodejs", "ExpressJs", "HTML", "JS", "CSS"],
       },
       {
         name: "Gerador de Documentos",
@@ -29,12 +29,49 @@ var app = new Vue({
       },
     ],
     showProjects: false,
+    isThemeDark: true,
   },
   delimiters: ["${", "}"], // Avoid Twig conflicts
   methods: {
-    async toggleProjects() {
-      this.showProjects = !this.showProjects;
+    getMode() {
+      const themeCookie = getCookie("isThemeDark");
+      if (themeCookie != null) {
+        this.isThemeDark = themeCookie == "true";
+      } else if (
+        window.matchMedia &&
+        !window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        this.isThemeDark = false;
+      }
+
+      this.setMode();
+
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+    },
+    setMode() {
+      document.cookie = "isThemeDark=" + this.isThemeDark;
+      if (this.isThemeDark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light"); 
+      }
     },
   },
-  mounted() {},
+  mounted() {
+    this.getMode();
+  },
 });
