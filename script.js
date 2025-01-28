@@ -24,7 +24,7 @@ var app = new Vue({
       {
         name: "Carregamento de Aulas na Plataforma",
         description:
-          "Automação que busca as aulas no Google Drive, salva na plataforma de vídeos e insere nas salas de aula dentro do ambiente virtual de aprendizagem.",
+          "Automação que busca as aulas no Google Drive, salva na plataforma de vídeos e insere nas salas de aula.",
         techs: ["Nodejs", "Puppeteer"],
       },
     ],
@@ -35,7 +35,7 @@ var app = new Vue({
   methods: {
     getMode() {
       const themeCookie = getCookie("isThemeDark");
-      if (themeCookie != null) {
+      if (themeCookie.length > 0) {
         this.isThemeDark = themeCookie == "true";
       } else if (
         window.matchMedia &&
@@ -43,7 +43,6 @@ var app = new Vue({
       ) {
         this.isThemeDark = false;
       }
-
       this.setMode();
 
       function getCookie(cname) {
@@ -67,7 +66,7 @@ var app = new Vue({
       if (this.isThemeDark) {
         document.documentElement.setAttribute("data-theme", "dark");
       } else {
-        document.documentElement.setAttribute("data-theme", "light"); 
+        document.documentElement.setAttribute("data-theme", "light");
       }
     },
   },
