@@ -5,7 +5,7 @@ var app = new Vue({
       {
         name: "Agendamento de Provas",
         description:
-          "Página Web para gerar avaliações no sistema Prova Fácil da forma mais rápida e simples possível.",
+          "Página Web para gerar avaliações no sistema Prova Fácil de forma mais rápida e simples possível.",
         techs: ["Nodejs", "ExpressJs", "HTML", "JS", "CSS"],
       },
       {
