@@ -138,7 +138,14 @@ nav .collapse .navbar-nav .nav-item.active,
 }
 nav .navbar-toggler,
 .nav .navbar-toggler {
-  transition: border 0.5s;
+  border: none;
+}
+nav .navbar-toggler:focus, nav .navbar-toggler:focus *, nav .navbar-toggler:focus-visible, nav .navbar-toggler:not(.collapsed) *,
+.nav .navbar-toggler:focus,
+.nav .navbar-toggler:focus *,
+.nav .navbar-toggler:focus-visible,
+.nav .navbar-toggler:not(.collapsed) * {
+  border: none;
 }
 nav .navbar-toggler .navbar-toggler-icon,
 .nav .navbar-toggler .navbar-toggler-icon {
@@ -396,8 +403,14 @@ nav:last-child {
 .btn-container.btn-contact::after {
   content: "entrar em contato";
 }
+.btn-container.btn-project-more {
+  margin-top: 16px;
+}
 .btn-container.btn-project-more::after {
   content: "Mostrar mais";
+}
+.btn-container.btn-project-less {
+  margin-top: 16px;
 }
 .btn-container.btn-project-less::after {
   content: "Mostrar menos";
@@ -419,12 +432,10 @@ nav:last-child {
 
 .scroll svg {
   margin: auto;
-}
-.scroll svg.play {
   animation: floating_arrow 1s ease-in-out infinite alternate;
   transform-origin: inherit;
 }
-.scroll svg.play path {
+.scroll svg path {
   fill: var(--title-color);
 }
 .scroll div {
@@ -467,7 +478,15 @@ nav:last-child {
   z-index: -1;
 }
 
-@media only screen and (min-width: 768px) {
+@keyframes floating_arrow {
+  from {
+    transform: translateY(-0.5em);
+  }
+  to {
+    transform: translateY(0.5em);
+  }
+}
+@media only screen and (min-width: 992px) {
   #projetos .project-container:hover .card {
     transform: translate(3px, -3px);
   }
@@ -507,14 +526,6 @@ nav:last-child {
   }
   #projetos .project-container:hover svg.robot .robot-eye path {
     fill: var(--font-color) !important;
-  }
-  @keyframes floating_arrow {
-    from {
-      transform: translateY(-0.5em);
-    }
-    to {
-      transform: translateY(0.5em);
-    }
   }
   @keyframes swing_effect {
     0%, 100% {
@@ -561,7 +572,10 @@ nav:last-child {
     }
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
+  #inicio {
+    min-height: 90vh;
+  }
   #inicio .home-data {
     height: 60vh;
   }
@@ -572,12 +586,14 @@ nav:last-child {
     margin-top: 32px;
   }
   #profile-image,
-  .scroll {
-    display: none;
+  .hide {
     all: unset;
     visibility: hidden;
     height: 0;
+    width: 0;
     padding: 0 !important;
+    font-size: 0;
+    display: none;
   }
   #projetos .project-container .project-text {
     font-size: 15px;

@@ -69,6 +69,9 @@ var app = new Vue({
         document.documentElement.setAttribute("data-theme", "light");
       }
     },
+    redirectContact() {
+      window.open("https://api.whatsapp.com/send/?phone=5521974243812", '_blank');
+    },
   },
   mounted() {
     this.getMode();

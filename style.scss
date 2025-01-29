@@ -133,7 +133,14 @@ nav,
     }
   }
   .navbar-toggler {
-    transition: border 0.5s;
+    // transition: border 0.5s;
+    border: none;
+    &:focus,
+    &:focus *,
+    &:focus-visible,
+    &:not(.collapsed) * {
+      border: none;
+    }
     .navbar-toggler-icon {
       // background-color: rgba(0, 128, 0, 0.8);
       // background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath stroke='rgba(0, 128, 0, 0.8)'stroke-width='2' stroke-linecap='round' stroke-miterlimit='10'd='M4 8h24M4 16h24M4 24h24' /%3E%3C/svg%3E");
@@ -447,11 +454,13 @@ nav:last-child {
   }
 
   &.btn-project-more {
+    margin-top: 16px;
     &::after {
       content: "Mostrar mais";
     }
   }
   &.btn-project-less {
+    margin-top: 16px;
     &::after {
       content: "Mostrar menos";
     }
@@ -477,12 +486,10 @@ nav:last-child {
 .scroll {
   svg {
     margin: auto;
-    &.play {
-      animation: floating_arrow 1s ease-in-out infinite alternate;
-      transform-origin: inherit;
-      path {
-        fill: var(--title-color);
-      }
+    animation: floating_arrow 1s ease-in-out infinite alternate;
+    transform-origin: inherit;
+    path {
+      fill: var(--title-color);
     }
   }
   div {
@@ -530,8 +537,25 @@ nav:last-child {
 //svg's settings
 
 //animations
+//arrow
+@keyframes floating_arrow {
+  from {
+    transform: translateY(-0.5em);
+  }
 
-@media only screen and (min-width: 768px) {
+  to {
+    transform: translateY(0.5em);
+  }
+  // from {
+  //     transform: translateY(0em) scale(8);
+  // }
+
+  // to {
+  //     transform: translateY(5em)scale(8);
+  // }
+}
+
+@media only screen and (min-width: 992px) {
   #projetos {
     .project-container {
       &:hover {
@@ -594,24 +618,6 @@ nav:last-child {
         }
       }
     }
-  }
-
-  //arrow
-  @keyframes floating_arrow {
-    from {
-      transform: translateY(-0.5em);
-    }
-
-    to {
-      transform: translateY(0.5em);
-    }
-    // from {
-    //     transform: translateY(0em) scale(8);
-    // }
-
-    // to {
-    //     transform: translateY(5em)scale(8);
-    // }
   }
 
   //student secction
@@ -679,13 +685,17 @@ nav:last-child {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   body {
     // background-color: blue;
   }
   #inicio {
+    min-height: 90vh;
     .home-data {
       height: 60vh;
+      // h1, .user-subtitle{
+      //   text-align: center;
+      // }
       .user-subtitle {
         font-size: 22px;
       }
@@ -696,12 +706,14 @@ nav:last-child {
     }
   }
   #profile-image,
-  .scroll {
-    display: none;
+  .hide {
     all: unset;
     visibility: hidden;
     height: 0;
+    width: 0;
     padding: 0 !important;
+    font-size: 0;
+    display: none;
   }
 
   #projetos {
@@ -721,7 +733,7 @@ nav:last-child {
       top: 0px;
     }
 
-    p{
+    p {
       margin-top: 32px;
       margin-bottom: 64px;
     }

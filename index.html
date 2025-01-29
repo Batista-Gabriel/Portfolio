@@ -66,8 +66,8 @@
       </header>
       <div class="container" data-bs-spy="scroll">
         <div id="inicio" class="row">
-          <div class="col-12 col-md-5">
-            <div id="profile-image" class="align-items-start d-flex">
+          <div class="col-12 col-lg-5" id="profile-image">
+            <div class="align-items-start d-flex">
               <img src="./profile-pic.png" id="profile-pic" alt="" />
 
               <svg
@@ -94,19 +94,23 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-7 home-data">
+          <div class="col-12 col-lg-7 home-data">
             <h1>Gabriel Batista</h1>
             <p class="user-subtitle">
-              &lt;<span class="code-tag">code</span>&gt
+              <span class="hide">
+                &lt;<span class="code-tag">code</span>&gt</span
+              >
               <span class="user-subtitle-text">Desenvolvedor Back-end</span>
-              &lt;/<span class="code-tag">code</span>&gt
+              <span class="hide">
+                &lt;/<span class="code-tag">code</span>&gt</span
+              >
             </p>
             <p class="summary">
               Eu sou um profissional carioca, e me dedico em transformar
               desafios de pessoas e empresas, criando soluções personalizadas e
               inovadoras por meio da programação.
             </p>
-            <div class="btn-container btn-contact">
+            <div class="btn-container btn-contact" v-on:click="redirectContact()">
               <div class="btn btn-primary">Entrar em contato</div>
             </div>
           </div>
@@ -130,16 +134,14 @@
         </div>
 
         <div id="projetos" class="full-page text-center">
-          <div class="row" id="projetos-">
+          <div id="projetos-" class="">
             <h2>Meus Projetos</h2>
-            <span class="subtitle"
-              >Aqui estão alguns trabalhos realizados.</span
-            >
-            <div class="row justify-content-between">
-              <div class="col-12 col-md-6 project-container">
+            <p class="subtitle">Aqui estão alguns trabalhos realizados.</p>
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-6 project-container">
                 <div class="card">
                   <div class="card-body row justify-content-between">
-                    <div class="col-md-10 col-12 text-start project-text">
+                    <div class="col-lg-10 col-12 text-start project-text">
                       <h4 class="project-title">
                         Contas para alunos ingressantes
                       </h4>
@@ -222,10 +224,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 project-container">
+              <div class="col-12 col-lg-6 project-container">
                 <div class="card">
                   <div class="card-body row justify-content-between">
-                    <div class="col-md-10 col-12 text-start project-text">
+                    <div class="col-lg-10 col-12 text-start project-text">
                       <h4 class="project-title">Lançamento de Notas</h4>
                       <span>
                         Automação para salvar as avaliações dos alunos da
@@ -325,10 +327,10 @@
                 </div>
               </div>
 
-              <div class="col-12 col-md-6 project-container">
+              <div class="col-12 col-lg-6 project-container">
                 <div class="card">
                   <div class="card-body row justify-content-between">
-                    <div class="col-md-10 col-12 text-start project-text">
+                    <div class="col-lg-10 col-12 text-start project-text">
                       <h4 class="project-title">Gerador de OS</h4>
                       <span>
                         Automatização para gerar ordens de serviços em lote para
@@ -414,10 +416,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6 project-container">
+              <div class="col-12 col-lg-6 project-container">
                 <div class="card">
                   <div class="card-body row justify-content-between">
-                    <div class="col-md-10 col-12 text-start project-text">
+                    <div class="col-lg-10 col-12 text-start project-text">
                       <h4 class="project-title">Quiz Bíblico</h4>
                       <span>
                         Uma jornada de perguntas e respostas sobre os mistérios
@@ -494,12 +496,12 @@
                 v-if="showProjects"
                 v-for="(project, index) in projects"
                 v-bind:key="'project_' + index"
-                class="col-12 col-md-6 project-container"
+                class="col-12 col-lg-6 project-container"
                 :class="{ disabled: !showProjects }"
               >
                 <div class="card">
                   <div class="card-body row justify-content-between">
-                    <div class="col-md-10 col-12 text-start project-text">
+                    <div class="col-lg-10 col-12 text-start project-text">
                       <h4 class="project-title">${project.name}</h4>
                       <span> ${project.description} </span>
                     </div>
@@ -599,19 +601,19 @@
         </div>
 
         <div id="sobre" class="row">
-          <div class="sticky col-12 col-md-6">
+          <div class="sticky col-12 col-lg-6">
             <h2>Sobre mim</h2>
             <p>
               Eu sou programador há 4 anos. O meu foco é maior em
               desenvolvimento de API's, automações de processos e criação de
               ferramentas que possam facilitar a vida das pessoas.
-            <br>
-            <br>
+              <br />
+              <br />
               Atualmente curso Análise e Desenvolvimento de Sistemas e trabalho
               na Faculdade Vitória em Cristo (FVC) como analista desenvolvedor.
             </p>
           </div>
-          <div class="about-itens col-12 col-md-5">
+          <div class="about-itens col-12 col-lg-5">
             <h3>Foco No Usuário</h3>
             <p>
               Desenvolvo aplicações que reduzem os trabalhos repetitivos e
@@ -627,12 +629,16 @@
               humano e executar as atividades de forma rápida.
             </p>
             <h3>Simplificação dos Processos</h3>
-            <p>ADICIONAR TEXTO</p>
+            <p>
+              Busco constantemente formas de sreduzir a complexidade dos fluxos
+              operacionais e aumentar a clareza das operações,trazendo assim maior
+              previsibilidade.
+            </p>
           </div>
         </div>
         <div id="contact" class="row full-page text-center align-items-center">
           <div class="d-flex justify-content-center">
-            <div class="col-10 col-md-10">
+            <div class="col-10 col-lg-10">
               <h2>Vamos conversar?</h2>
               <p>
                 Se o seu objetivo é tornar seu sistema mais eficiente, com
@@ -644,7 +650,7 @@
             </div>
           </div>
           <div>
-            <div class="btn-container btn-contact">
+            <div class="btn-container btn-contact" v-on:click="redirectContact()">
               <div class="btn btn-primary">Entrar em contato</div>
             </div>
           </div>
